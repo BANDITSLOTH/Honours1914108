@@ -1,0 +1,41 @@
+{
+  "name": "PhishPit - Phishing Link Detector",
+  "version": "1.0.0",
+  "description": "This is an extension which detects phishing links",
+  "manifest_version": 3,
+  "author": "Kyle Burden",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "permissions",
+    "http://localhost:5000/*",
+    "http://*/",
+    "https://*/"
+
+    
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "PhishPit - Phishing Link Detector"
+  },
+  "icons": {
+    "16": "16logo.png",
+    "32": "32logo.png",
+    "48": "48logo.png",
+    "128": "128logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

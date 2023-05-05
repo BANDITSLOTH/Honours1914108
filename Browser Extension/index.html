@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishPit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div>
+        <h1> PhishPit - Phishing Link Detector</h1>
+        <br>
+        <div id="button"></div>
+        <!-- enable and disable button -->
+        <button type="button" id="toggle-button" onclick="toggle()">
+            <img id="toggle-icon" src="enable.png" alt="Enable">
+        </button>
+        <span id="toggle-text" onclick="toggle()">Click to Enable Detector</span>
+        <p>GREEN URL = Legitimate RED URL = Phishing Link</p>
+        <br>
+    </div>
+    <footer>
+        <p>***DISCLAIMER - CLASSIFIED URLS MAY NOT BE 100% ACCURATE***</p>
+        <p>Created by Kyle Burden 1914108 | Robert Gordon University</p>
+    </footer>
+    <script src="content.js"></script>
+    <script src="event.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+h1 {
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+}
+
+#toggle-button {
+    width: 20%;
+    height: 20%;
+}
+
+#toggle-button:hover {
+    cursor: pointer;
+}
+
+#toggle-icon {
+    width: 100%;
+    height: 100%;
+}
+
+#toggle-text {
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    background-color: gold;
+}

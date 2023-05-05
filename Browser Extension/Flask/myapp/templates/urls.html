@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Detected URLs</title>
+</head>
+<body>
+    <h1>Detected URLs:</h1>
+    {% if detected_urls %}
+    <ul>
+        {% for url in detected_urls %}
+        <li>{{ url }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No URLs detected</p>
+    {% endif %}
+</body>
+</html>
+
+<script>
+    setInterval(function () {
+        fetch('/urls').then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+            var urls = data.detected_urls;
+            var urlList = document.querySelector('ul');
+            urlList.innerHTML = '';
+            if (urls.length > 0) {
+                for (var i = 0; i < urls.length; i++) {
+                    var li = document.createElement('li');
+                    li.textContent = urls[i];
+                    urlList.appendChild(li);
+                }
+            } else {
+                var li = document.createElement('li');
+                li.textContent = 'No URLs detected';
+                urlList.appendChild(li);
+            }
+        });
+    }, 3000);
+</script>
